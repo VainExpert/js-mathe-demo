@@ -20,7 +20,7 @@
 .kreis-visual span {
 	margin-top: 52px;
 	display: block;
-	color: white;
+	color: yellow;
 	font-weight: bold;
 	font-size: 1.5em;
 }
