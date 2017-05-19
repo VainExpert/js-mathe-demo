@@ -20,12 +20,36 @@
 .kreis-visual span {
 	margin-top: 52px;
 	display: block;
-	color: yellow;
+	color: white;
 	font-weight: bold;
 	font-size: 1.5em;
 }
 #rad {
 	background-color: #0000ff;
+	color: yellow;
+}
+.rechteck-visual {
+	width: 150px; 
+	height: 150px;
+	border: 5px solid; 
+	border-color: darkred;
+	margin-top: 2%;
+	background: radial-gradient(ellipse at center, #cc0000 0%,#cc0000 100%);
+	text-align: center;
+}
+.rechteck-visual span {
+	margin-top: 52px;
+	display: block;
+	color: white;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+#höhe {
+	background-color: #000030;
+	color: white;
+}
+#breite {
+	background-color: #000030;
 	color: white;
 }
 </style>	
@@ -41,12 +65,12 @@
 		</div>
 		<div class="col-md-6">	
 			<strong>Kreis</strong>
-				<div class="bo boimg-1 kreis-visual">
+				<div class="kreis-visual">
 					<span id="demo" ></span>
 				</div>
-			<br><br>
-			<form id="frm1">
-				r = <input type="text" id="rad" name="radius" placeholder="Radius (in cm)">
+			<br/><br/>
+			<form>
+				r = <input type="text" id="rad" placeholder="Radius (in cm)">
 			</form>
 			<p>Klicke auf "Berechnen" um den Flaecheninhalt des Kreises zu berechnen.</p>
 			<button onclick="myFunction()">Berechnen</button>
@@ -59,21 +83,17 @@
 				}	
 			</script>	
 		</div>
-		<br><br>
+		<br/><br/>
 
 		<div class="col-md-6">
 			<strong>Rechteck</strong>
-			<br>
-			<div class="bo boimg-1" style="width: 150px; height: 150px; border:5px solid; margin-top: 2%;">
-				<div class="col-*-*">
-					<br><br><br>
+			<div class="rechteckk-visual">
 					<span id="demo1"></span>
-				</div>
 			</div> 
 			<br/><br/>
-			<form id="frm1">
-				a/hoehe = <input type="text" id="hoehe" name="höhe" placeholder="Laenge der Seite a/h (in cm)"></input>
-				b/breite = <input type="text" id="breite" name="breite" placeholder="Laenge der Seite b/breite (in cm)"></input>
+			<form>
+				a/hoehe = <input type="text" id="hoehe" placeholder="Laenge der Seite a/h (in cm)">
+				b/breite = <input type="text" id="breite" placeholder="Laenge der Seite b/breite (in cm)">
 			</form>
 			<p>Klicke auf "Berechnen" um den Flaecheninhalt des Rechtecks zu berechnen.</p>
 			<button onclick="myFunction1()">Berechnen</button>
@@ -82,7 +102,7 @@
 					var a = $('#hoehe').val();
 					var b = $('#breite').val();
 					var a2 = a * b;
-					document.getElementById("demo1").innerHTML = a2;
+					$("#demo1").html(a2);
 				}
 			</script>
 		</div>
