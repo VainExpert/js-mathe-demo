@@ -1,3 +1,19 @@
+<?php
+
+if (isset($_POST['radius'])) {
+	$radius = intval($_POST['radius']);
+	$a = $radius * $radius * M_PI;
+	$a2 = round ($a);
+}
+?>	
+<?php
+if (isset($_POST['hoehe']) && isset($_POST['breite'])) {	
+	$hoehe = intval($_POST['hoehe']);
+	$breite = intval($_POST['breite']);
+	$a1 = $hoehe * $breite;
+}
+?>
+
 <html>
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -55,10 +71,10 @@
 </style>	
 
 <div class="container">
-	<div class="starter-template">	
+		<div class="starter-template">	
 			<h1>Flaechenberechnungsprogramm</h1>
 			<p class="lead">Flaechen berechnen leicht gemacht! (mehr oder weniger)</p>
-	</div>
+		</div>
      <div class="row">
 		<div class="col-md-12">
 		<h3> Flaechenberechnung </h3>
@@ -66,45 +82,28 @@
 		<div class="col-md-6">	
 			<strong>Kreis</strong>
 				<div class="kreis-visual">
-					<span id="demo" ></span>
+					<span id="demo" ><?php echo $a2; ?></span>
 				</div>
 			<br/><br/>
 			<form method="POST">
 				r = <input type="text" id="rad" name="radius" placeholder="Radius (in cm)">
+				<input type="submit" id="berechnen"></input>
 			</form>
-			<p>Klicke auf "Berechnen" um den Flaecheninhalt des Kreises zu berechnen.</p>
-			<button onclick="myFunction()">Berechnen</button>
-			<script>
-				function myFunction() {
-					var r = $('#rad').val();
-					var a1 = Math.PI * r * r;
-					var a2 = Math.round(a1);
-					$("#demo").html(a2);
-				}	
-			</script>	
+			<p>Klicke auf "Daten absenden" um den Flaecheninhalt des Kreises zu berechnen.</p>
 		</div>
 		<br/><br/>
-
 		<div class="col-md-6">
 			<strong>Rechteck</strong>
 			<div class="rechteck-visual">
-					<span id="demo1"></span>
+				<span id="demo1"><?php echo $a1; ?></span>
 			</div> 
 			<br/><br/>
-			<form>
-				a/hoehe = <input type="text" id="hoehe" placeholder="Laenge der Seite a/h (in cm)">
-				b/breite = <input type="text" id="breite" placeholder="Laenge der Seite b/breite (in cm)">
+			<form method="POST">
+				a/hoehe = <input type="text" id="hoehe" name="hoehe" placeholder="Laenge der Seite a/h (in cm)">
+				b/breite = <input type="text" id="breite" name="breite" placeholder="Laenge der Seite b/breite (in cm)">
+				<input type="submit" id="berechnen"></input>
 			</form>
-			<p>Klicke auf "Berechnen" um den Flaecheninhalt des Rechtecks zu berechnen.</p>
-			<button onclick="myFunction1()">Berechnen</button>
-			<script>
-				function myFunction1() {
-					var a = $('#hoehe').val();
-					var b = $('#breite').val();
-					var a2 = a * b;
-					$("#demo1").html(a2);
-				}
-			</script>
+			<p>Klicke auf "Daten absenden" um den Flaecheninhalt des Rechtecks zu berechnen.</p>
 		</div>
 	</div>
 </div>
