@@ -34,7 +34,7 @@
 	border: 5px solid; 
 	border-color: darkred;
 	margin-top: 2%;
-	background: radial-gradient(ellipse at center, #cc0000 0%,#cc0000 100%);
+	background: radial-gradient(ellipse at center, #cc0000 39%,#ad3f00 58%);
 	text-align: center;
 }
 .rechteck-visual span {
@@ -44,7 +44,7 @@
 	font-weight: bold;
 	font-size: 1.5em;
 }
-#höhe {
+#hoehe {
 	background-color: #000030;
 	color: white;
 }
@@ -87,7 +87,7 @@
 
 		<div class="col-md-6">
 			<strong>Rechteck</strong>
-			<div class="rechteckk-visual">
+			<div class="rechteck-visual">
 					<span id="demo1"></span>
 			</div> 
 			<br/><br/>
